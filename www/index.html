@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <title>Hello World</title>
+    </head>
+    <body>
+        <div class="app">
+            <h1>Bluetooth Serial</h1>
+
+            <div id="outputDiv"></div>
+
+            <button id="listButton">List</button><br/>
+            <button id="connectButton">Connect</button><input type="text" name="connectText" id="connectText"/><br/>
+            <button id="disconnectButton">Disconnect</button><br/>
+
+            <button id="bytesAvailableButton">Bytes Available</button><br/>
+            <button id="readDataButton">Read Data</button><br/>
+            <button id="readUntilButton">Read Until</button><input type="text" name="readUntilText" id="readUntilText" value="\n" /><br/>
+            <button id="clearBufferButton">Clear Buffer</button><br/>
+
+            <button id="subscribeButton">Subscribe</button><input type="text" name="subscribeText" id="subscribeText" value="\n" /><br/>
+            <button id="unsubscribeButton">Unsubscribe</button><br/>
+            <button id="subscribeRawDataButton">Subscribe Raw Data</button><br/>
+            <button id="unsubscribeRawDataButton">Unsubscribe Raw Data</button><br/>
+
+            <button id="writeButton">Write</button><input type="text" name="writeText" id="writeText"  value="Hello, world!" /><br/>
+            <button id="writeBytesButton">Write Bytes</button><input type="text" name="writeBytesText" id="writeBytesText" value="61 62 63" /><br/>
+
+            <button id="isEnabledButton">Is Enabled?</button><br/>            
+            <button id="isConnectedButton">Is Connected?</button><br/>
+
+        </div>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+    </body>
+</html>
