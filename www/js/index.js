@@ -44,8 +44,9 @@ var app = {
         connectText.value = peripherals[0].id;
       }
 
-      function failure() {
-        log("Listing peripherals failed");
+      function failure(reason) {
+        reason = "";
+        log(reason || "Listing peripherals failed");
       }
 
       bluetoothSerial.list(success, failure);
