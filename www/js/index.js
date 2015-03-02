@@ -45,7 +45,6 @@ var app = {
       }
 
       function failure(reason) {
-        reason = "";
         log(reason || "Listing peripherals failed");
       }
 
