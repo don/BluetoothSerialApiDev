@@ -29,6 +29,8 @@ var app = {
         isEnabledButton.addEventListener('click', this.isEnabled, false);
         isConnectedButton.addEventListener('click', this.isConnected, false);
 
+        settingsButton.addEventListener('click', this.showBluetoothSettings, false);
+        enableButton.addEventListener('click', this.enable, false);
 
     },
     onDeviceReady: function() {
@@ -238,8 +240,27 @@ var app = {
           log("Bluetooth is *not* connected");
         }
       );
+    },
+    showBluetoothSettings: function() {
+      bluetoothSerial.showBluetoothSettings(
+        function() {
+          log("Bluetooth settings should have appeared");
+        },
+        function() {
+          log("Problem showing Bluetooth settings");
+        }
+      );
+    },
+    enable: function() {
+      bluetoothSerial.enable(
+        function() {
+          log("Bluetooth is Enabled");
+        },
+        function(reason) {
+          log(reason);
+        }
+      );
     }
-
 };
 
 app.initialize();
